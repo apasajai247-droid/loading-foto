@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loading Foto...</title>
+<style>
+body {
+  margin: 0;
+  background: black;
+}
+img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+</style>
+</head>
+
+<body>
+
+<img id="img" src="https://picsum.photos/800/600?random=1">
+
+<audio id="sound">
+  <source src="https://www.myinstants.com/media/sounds/jumpscare.mp3">
+</audio>
+
+<script>
+let count = 1;
+setInterval(() => {
+  count++;
+  document.getElementById("img").src =
+    "https://picsum.photos/800/600?random=" + count;
+}, 700);
+
+setTimeout(() => {
+  document.getElementById("img").src =
+    "https://i.imgur.com/6g7Z4JX.jpg";
+  document.getElementById("sound").play();
+}, 4500);
+</script>
+
+</body>
+</html>
